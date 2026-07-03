@@ -1,0 +1,179 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- ===== PAGE HEADER ===== -->
+<div class="page-header-dark">
+    <h1>🏆 Past Work – Success Stories</h1>
+    <p>Click "View Case Study" to learn how we helped our clients.</p>
+</div>
+
+<!-- ===== CASE STUDY CARDS ===== -->
+<div class="row g-4">
+
+    <!-- Case 1: FinTech Bank -->
+    <div class="col-md-4">
+        <div class="service-card-dark">
+            <div class="case-image-placeholder" style="background:linear-gradient(135deg,#1a2332,#0f172a);border-radius:1rem;padding:2rem;text-align:center;margin-bottom:1rem;border:1px solid #1e2a3a;">
+                <span style="font-size:3rem;">🏦</span>
+                <p style="color:#94a3b8;margin:0;font-size:0.85rem;">Financial Services</p>
+            </div>
+            <h3>FinTech Bank – Nepal</h3>
+            <p style="color:#94a3b8;">Reduced call center volume by <strong style="color:#60a5fa;">65%</strong> using AI Virtual Assistant.</p>
+            <button class="btn-solution-learn" data-bs-toggle="modal" data-bs-target="#case1">View Case Study →</button>
+        </div>
+    </div>
+
+    <!-- Case 2: Global E-commerce -->
+    <div class="col-md-4">
+        <div class="service-card-dark">
+            <div class="case-image-placeholder" style="background:linear-gradient(135deg,#1a2332,#0f172a);border-radius:1rem;padding:2rem;text-align:center;margin-bottom:1rem;border:1px solid #1e2a3a;">
+                <span style="font-size:3rem;">🛒</span>
+                <p style="color:#94a3b8;margin:0;font-size:0.85rem;">E-commerce</p>
+            </div>
+            <h3>Global E‑commerce</h3>
+            <p style="color:#94a3b8;">Prototyped recommendation engine in <strong style="color:#60a5fa;">2 weeks</strong>, increased sales by <strong style="color:#60a5fa;">20%</strong>.</p>
+            <button class="btn-solution-learn" data-bs-toggle="modal" data-bs-target="#case2">View Case Study →</button>
+        </div>
+    </div>
+
+    <!-- Case 3: Healthcare Provider -->
+    <div class="col-md-4">
+        <div class="service-card-dark">
+            <div class="case-image-placeholder" style="background:linear-gradient(135deg,#1a2332,#0f172a);border-radius:1rem;padding:2rem;text-align:center;margin-bottom:1rem;border:1px solid #1e2a3a;">
+                <span style="font-size:3rem;">🏥</span>
+                <p style="color:#94a3b8;margin:0;font-size:0.85rem;">Healthcare</p>
+            </div>
+            <h3>Healthcare Provider – Kathmandu</h3>
+            <p style="color:#94a3b8;">AI-powered triage system reduced wait times by <strong style="color:#60a5fa;">40%</strong>.</p>
+            <button class="btn-solution-learn" data-bs-toggle="modal" data-bs-target="#case3">View Case Study →</button>
+        </div>
+    </div>
+
+    <!-- Case 4: ISMT College -->
+    <div class="col-md-4">
+        <div class="service-card-dark">
+            <div class="case-image-placeholder" style="background:linear-gradient(135deg,#1a2332,#0f172a);border-radius:1rem;padding:2rem;text-align:center;margin-bottom:1rem;border:1px solid #1e2a3a;">
+                <span style="font-size:3rem;">🎓</span>
+                <p style="color:#94a3b8;margin:0;font-size:0.85rem;">Education</p>
+            </div>
+            <h3>ISMT College – Pokhara</h3>
+            <p style="color:#94a3b8;">AI-powered student support improved response time by <strong style="color:#60a5fa;">70%</strong>.</p>
+            <button class="btn-solution-learn" data-bs-toggle="modal" data-bs-target="#case4">View Case Study →</button>
+        </div>
+    </div>
+
+</div>
+
+<!-- ============================================ -->
+<!-- MODALS (Dark Theme with Visible Content)     -->
+<!-- ============================================ -->
+
+<!-- Modal 1: FinTech Bank -->
+<div class="modal fade" id="case1" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content modal-dark">
+            <div class="modal-header modal-dark-header">
+                <h5 class="modal-title">🏦 FinTech Bank – Case Study</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body modal-dark-body">
+                <div style="background:rgba(10,13,20,0.5);padding:1.2rem;border-radius:1rem;margin-bottom:1.2rem;border-left:3px solid #3b82f6;">
+                    <h6 style="color:#f0f3f8;margin-bottom:0.3rem;">📌 Challenge</h6>
+                    <p style="color:#94a3b8;margin:0;">High call center volume causing long wait times and customer dissatisfaction.</p>
+                </div>
+                <div style="background:rgba(10,13,20,0.5);padding:1.2rem;border-radius:1rem;margin-bottom:1.2rem;border-left:3px solid #60a5fa;">
+                    <h6 style="color:#f0f3f8;margin-bottom:0.3rem;">💡 Solution</h6>
+                    <p style="color:#94a3b8;margin:0;">Deployed AI Virtual Assistant integrated with internal systems to handle common queries.</p>
+                </div>
+                <div style="background:rgba(10,13,20,0.5);padding:1.2rem;border-radius:1rem;margin-bottom:1.2rem;border-left:3px solid #4ade80;">
+                    <h6 style="color:#f0f3f8;margin-bottom:0.3rem;">✅ Result</h6>
+                    <p style="color:#94a3b8;margin:0;"><strong style="color:#4ade80;">65%</strong> reduction in call center volume, <strong style="color:#4ade80;">90%</strong> customer satisfaction rate.</p>
+                </div>
+                <a href="/contact" class="btn-modal-cta">Start Your AI Journey →</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal 2: Global E-commerce -->
+<div class="modal fade" id="case2" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content modal-dark">
+            <div class="modal-header modal-dark-header">
+                <h5 class="modal-title">🛒 Global E-commerce – Case Study</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body modal-dark-body">
+                <div style="background:rgba(10,13,20,0.5);padding:1.2rem;border-radius:1rem;margin-bottom:1.2rem;border-left:3px solid #3b82f6;">
+                    <h6 style="color:#f0f3f8;margin-bottom:0.3rem;">📌 Challenge</h6>
+                    <p style="color:#94a3b8;margin:0;">Needed personalized product recommendations to increase sales and engagement.</p>
+                </div>
+                <div style="background:rgba(10,13,20,0.5);padding:1.2rem;border-radius:1rem;margin-bottom:1.2rem;border-left:3px solid #60a5fa;">
+                    <h6 style="color:#f0f3f8;margin-bottom:0.3rem;">💡 Solution</h6>
+                    <p style="color:#94a3b8;margin:0;">Built an AI recommendation engine prototype in <strong style="color:#60a5fa;">2 weeks</strong> using rapid prototyping.</p>
+                </div>
+                <div style="background:rgba(10,13,20,0.5);padding:1.2rem;border-radius:1rem;margin-bottom:1.2rem;border-left:3px solid #4ade80;">
+                    <h6 style="color:#f0f3f8;margin-bottom:0.3rem;">✅ Result</h6>
+                    <p style="color:#94a3b8;margin:0;"><strong style="color:#4ade80;">20%</strong> increase in sales, improved user engagement, and launched <strong style="color:#4ade80;">3 months</strong> ahead of schedule.</p>
+                </div>
+                <a href="/contact" class="btn-modal-cta">Build Your Prototype →</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal 3: Healthcare Provider -->
+<div class="modal fade" id="case3" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content modal-dark">
+            <div class="modal-header modal-dark-header">
+                <h5 class="modal-title">🏥 Healthcare Provider – Case Study</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body modal-dark-body">
+                <div style="background:rgba(10,13,20,0.5);padding:1.2rem;border-radius:1rem;margin-bottom:1.2rem;border-left:3px solid #3b82f6;">
+                    <h6 style="color:#f0f3f8;margin-bottom:0.3rem;">📌 Challenge</h6>
+                    <p style="color:#94a3b8;margin:0;">Slow patient triage process leading to long wait times in emergency.</p>
+                </div>
+                <div style="background:rgba(10,13,20,0.5);padding:1.2rem;border-radius:1rem;margin-bottom:1.2rem;border-left:3px solid #60a5fa;">
+                    <h6 style="color:#f0f3f8;margin-bottom:0.3rem;">💡 Solution</h6>
+                    <p style="color:#94a3b8;margin:0;">AI-powered triage system that prioritizes patients based on urgency.</p>
+                </div>
+                <div style="background:rgba(10,13,20,0.5);padding:1.2rem;border-radius:1rem;margin-bottom:1.2rem;border-left:3px solid #4ade80;">
+                    <h6 style="color:#f0f3f8;margin-bottom:0.3rem;">✅ Result</h6>
+                    <p style="color:#94a3b8;margin:0;"><strong style="color:#4ade80;">40%</strong> reduction in wait times, improved patient outcomes and satisfaction.</p>
+                </div>
+                <a href="/contact" class="btn-modal-cta">Transform Healthcare →</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal 4: ISMT College -->
+<div class="modal fade" id="case4" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content modal-dark">
+            <div class="modal-header modal-dark-header">
+                <h5 class="modal-title">🎓 ISMT College – Case Study</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body modal-dark-body">
+                <div style="background:rgba(10,13,20,0.5);padding:1.2rem;border-radius:1rem;margin-bottom:1.2rem;border-left:3px solid #3b82f6;">
+                    <h6 style="color:#f0f3f8;margin-bottom:0.3rem;">📌 Challenge</h6>
+                    <p style="color:#94a3b8;margin:0;">High volume of student inquiries overwhelming administrative staff.</p>
+                </div>
+                <div style="background:rgba(10,13,20,0.5);padding:1.2rem;border-radius:1rem;margin-bottom:1.2rem;border-left:3px solid #60a5fa;">
+                    <h6 style="color:#f0f3f8;margin-bottom:0.3rem;">💡 Solution</h6>
+                    <p style="color:#94a3b8;margin:0;">AI-powered student support system with instant answers and automated routing.</p>
+                </div>
+                <div style="background:rgba(10,13,20,0.5);padding:1.2rem;border-radius:1rem;margin-bottom:1.2rem;border-left:3px solid #4ade80;">
+                    <h6 style="color:#f0f3f8;margin-bottom:0.3rem;">✅ Result</h6>
+                    <p style="color:#94a3b8;margin:0;"><strong style="color:#4ade80;">70%</strong> faster response time, higher student satisfaction, reduced staff workload.</p>
+                </div>
+                <a href="/contact" class="btn-modal-cta">Start Your Education AI →</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

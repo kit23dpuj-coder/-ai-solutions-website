@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 style="color: #f0f3f8;">👑 Admin Dashboard</h1>
+    <a href="/admin/logout" class="btn btn-danger">🚪 Logout</a>
+</div>
+
+<!-- ===== FLASH MESSAGES ===== -->
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <div class="alert alert-{{ category if category != 'message' else 'info' }} alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+<!-- ===== STATS CARDS ===== -->
+<div class="row g-4 mb-4">
+    <div class="col-md-4">
+        <div class="card-dark text-center">
+            <h2 class="stat-number-dark">{{ total_inquiries }}</h2>
+            <p class="stat-label" style="color:#94a3b8;">📧 Total Inquiries</p>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card-dark text-center">
+            <h2 class="stat-number-dark">{{ total_feedbacks }}</h2>
+            <p class="stat-label" style="color:#94a3b8;">⭐ Total Feedbacks</p>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card-dark text-center">
+            <h2 class="stat-number-dark">{{ total_inquiries + total_feedbacks }}</h2>
+            <p class="stat-label" style="color:#94a3b8;">📊 Total Interactions</p>
+        </div>
+    </div>
+</div>
+
+<!-- ===== INQUIRIES TABLE ===== -->
+<h4 class="mt-4" style="color:#60a5fa;"><i class="fas fa-envelope"></i> 📧 Inquiries</h4>
+<div class="table-responsive">
+    <table class="table table-dark table-striped table-hover">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Company</th>
+                <th>Country</th>
+                <th>Job Title</th>
+                <th>Job Details</th>
+                <th>Status</th>
+                <th>Reply</th>
+                <th>Submitted</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in inquiries %}
+            <tr>
+                <td>{{ i.id }}</td>
+                <td>{{ i.name }}</td>
+                <td>{{ i.email }}</td>
+                <td>{{ i.phone }}</td>
+                <td>{{ i.company or '-' }}</td>
+                <td>{{ i.country }}</td>
+                <td>{{ i.job_title }}</td>
+                <td style="max-width:150px;word-wrap:break-word;">{{ i.job_details[:50] }}{% if i.job_details|length > 50 %}...{% endif %}</td>
+                <td>
+                    {% if i.status == 'replied' %}
+                        <span class="badge bg-success">✅ Replied</span>
+                    {% else %}
+                        <span class="badge bg-warning text-dark">⏳ Pending</span>
+                    {% endif %}
+                </td>
+                <td>
+                    {% if i.reply %}
+                        <button class="btn btn-sm btn-outline-info" onclick="alert('Reply: {{ i.reply }}')">View Reply</button>
+                    {% else %}
+                        <form method="POST" action="/admin/reply/{{ i.id }}" style="display:flex;gap:5px;flex-wrap:wrap;">
+                            <input type="text" name="reply" class="form-control form-control-sm" placeholder="Type reply..." style="width:150px;background:#0a0d14;color:#f0f3f8;border:1px solid #1e2a3a;border-radius:8px;" required>
+                            <button type="submit" class="btn btn-sm btn-primary">Send</button>
+                        </form>
+                    {% endif %}
+                </td>
+                <td>{{ i.submitted_at[:10] }}</td>
+                <td>
+                    <a href="/admin/delete/{{ i.id }}" class="btn btn-sm btn-danger" onclick="return confirm('Delete this inquiry?')">🗑️</a>
+                </td>
+            </tr>
+            {% else %}
+            <tr><td colspan="12" class="text-center text-secondary">No inquiries yet.</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<!-- ===== FEEDBACKS TABLE ===== -->
+<h4 class="mt-4" style="color:#a78bfa;"><i class="fas fa-star"></i> ⭐ Feedbacks</h4>
+<div class="table-responsive">
+    <table class="table table-dark table-striped table-hover">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Rating</th>
+                <th>Comment</th>
+                <th>Submitted</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for f in feedbacks %}
+            <tr>
+                <td>{{ f.id }}</td>
+                <td>{{ f.name }}</td>
+                <td>{{ f.email }}</td>
+                <td>
+                    {% for _ in range(f.rating) %}⭐{% endfor %}
+                </td>
+                <td>{{ f.comment or '-' }}</td>
+                <td>{{ f.submitted_at[:10] }}</td>
+            </tr>
+            {% else %}
+            <tr><td colspan="6" class="text-center text-secondary">No feedback yet.</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

@@ -1,0 +1,240 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- ===== HERO SECTION (Unique) ===== -->
+<div class="contact-hero-modern">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-7">
+                <div class="contact-hero-text">
+                    <div class="contact-badge">📬 Let's Talk</div>
+                    <h1>We'd Love to <br><span class="gradient-text">Hear From You</span></h1>
+                    <p>Have a project in mind? Need AI solutions? Fill the form and we'll get back within 24 hours.</p>
+                    <div class="hero-trust-badges">
+                        <span><i class="fas fa-clock"></i> 24/7 Support</span>
+                        <span><i class="fas fa-rocket"></i> 2 Weeks Prototyping</span>
+                        <span><i class="fas fa-star"></i> 4.9/5 Rating</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="contact-hero-stats">
+                    <div class="stat-card-mini">
+                        <span class="stat-mini-icon">📧</span>
+                        <div>
+                            <strong>Email Response</strong>
+                            <small>Within 24 hours</small>
+                        </div>
+                    </div>
+                    <div class="stat-card-mini">
+                        <span class="stat-mini-icon">📞</span>
+                        <div>
+                            <strong>Phone Support</strong>
+                            <small>9AM - 6PM</small>
+                        </div>
+                    </div>
+                    <div class="stat-card-mini">
+                        <span class="stat-mini-icon">🤝</span>
+                        <div>
+                            <strong>Client Satisfaction</strong>
+                            <small>98% Positive</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ===== CONTACT MAIN ===== -->
+<div class="contact-main-modern">
+    <div class="container">
+        <div class="row g-5">
+
+            <!-- FORM (Left) -->
+            <div class="col-lg-7">
+                <div class="contact-form-card-modern">
+                    <div class="form-header">
+                        <h3>Send Us a Message</h3>
+                        <p>Fill the form below and we'll get back to you within 24 hours.</p>
+                    </div>
+
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                        {% if messages %}
+                            {% for category, message in messages %}
+                                <div class="alert alert-{{ category }}">{{ message }}</div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+
+                    <form method="POST" class="contact-form-modern">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group-modern">
+                                    <label class="form-label">👤 Full Name <span class="required-star">*</span></label>
+                                    <input type="text" name="name" class="form-control" placeholder="John Doe" required>
+                                    <div class="input-line"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group-modern">
+                                    <label class="form-label">📧 Email Address <span class="required-star">*</span></label>
+                                    <input type="email" name="email" class="form-control" placeholder="john@example.com" required>
+                                    <div class="input-line"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group-modern">
+                                    <label class="form-label">📱 Phone <span class="required-star">*</span> <small>(10 digits)</small></label>
+                                    <input type="text" name="phone" class="form-control" placeholder="9841234567" required pattern="[0-9]{10}">
+                                    <small class="field-hint">Enter exactly 10 digits (e.g., 9841234567)</small>
+                                    <div class="input-line"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group-modern">
+                                    <label class="form-label">🏢 Company</label>
+                                    <input type="text" name="company" class="form-control" placeholder="Your Company">
+                                    <div class="input-line"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group-modern">
+                                    <label class="form-label">🌍 Country <span class="required-star">*</span></label>
+                                    <input type="text" name="country" class="form-control" placeholder="Nepal" required>
+                                    <div class="input-line"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group-modern">
+                                    <label class="form-label">💼 Job Title <span class="required-star">*</span></label>
+                                    <input type="text" name="job_title" class="form-control" placeholder="Software Engineer" required>
+                                    <div class="input-line"></div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group-modern">
+                                    <label class="form-label">📝 Job Details / Requirements <span class="required-star">*</span></label>
+                                    <textarea name="job_details" class="form-control" rows="5" placeholder="Describe your requirements in detail..." required></textarea>
+                                    <div class="input-line"></div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn-submit-modern">
+                                    <span>🚀 Send Inquiry</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- ===== INFO SIDEBAR (Right) ===== -->
+            <div class="col-lg-5">
+                <div class="contact-info-card-modern">
+                    <div class="info-card-header">
+                        <span class="info-card-badge">📍 Let's Connect</span>
+                        <h4>Get in Touch</h4>
+                        <p>We're here to help you build AI solutions.</p>
+                    </div>
+
+                    <div class="info-items">
+                        <div class="info-item-modern">
+                            <div class="info-icon-circle">🏢</div>
+                            <div class="info-text">
+                                <strong>Visit Us</strong>
+                                <p>ISMT College, Kathmandu, Nepal</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item-modern">
+                            <div class="info-icon-circle">📞</div>
+                            <div class="info-text">
+                                <strong>Call Us</strong>
+                                <p>+977-1-4245678</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item-modern">
+                            <div class="info-icon-circle">📧</div>
+                            <div class="info-text">
+                                <strong>Email Us</strong>
+                                <p>hello@aisolutions.com</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item-modern">
+                            <div class="info-icon-circle">🕐</div>
+                            <div class="info-text">
+                                <strong>Working Hours</strong>
+                                <p>Mon-Fri: 9AM – 6PM</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-divider-line"></div>
+
+                    <!-- Quick Reply Suggestions -->
+                    <div class="quick-suggestions">
+                        <p class="suggest-title">💡 Quick Questions?</p>
+                        <div class="suggest-buttons">
+                            <a href="/chatbot-page" class="suggest-btn">💬 Chat with AI</a>
+                            <a href="/solutions" class="suggest-btn">🚀 Our Solutions</a>
+                        </div>
+                    </div>
+
+                    <div class="info-divider-line"></div>
+
+                    <!-- Social Media -->
+                    <div class="info-social-modern">
+                        <p class="social-text">Follow us</p>
+                        <div class="social-icons-modern">
+                            <a href="#" class="social-icon-modern" style="background:#0a66c2;"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-icon-modern" style="background:#1da1f2;"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-icon-modern" style="background:#1877f2;"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-icon-modern" style="background:#ff0000;"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- ===== MAP / LOCATION SECTION ===== -->
+<div class="contact-map-section">
+    <div class="container">
+        <div class="map-card">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="map-text">
+                        <span class="map-badge">📍 Our Location</span>
+                        <h3>Visit Our <span class="gradient-text">Office</span></h3>
+                        <p>ISMT College, Kathmandu, Nepal. We're located in the heart of the city.</p>
+                        <div class="map-details">
+                            <span><i class="fas fa-map-pin"></i> ISMT College, Kathmandu</span>
+                            <span><i class="fas fa-clock"></i> Mon-Fri: 9AM - 6PM</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="map-placeholder">
+                        <div style="background:linear-gradient(135deg,#1a2332,#0f172a);border-radius:1.5rem;padding:2.5rem;text-align:center;border:1px solid #1e2a3a;">
+                            <span style="font-size:4rem;">📍</span>
+                            <h5 style="color:#f0f3f8;margin-top:0.5rem;">ISMT College</h5>
+                            <p style="color:#94a3b8;">Kathmandu, Nepal</p>
+                            <div style="display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;">
+                                <span style="color:#94a3b8;font-size:0.9rem;"><i class="fas fa-phone" style="color:#60a5fa;"></i> +977-1-4245678</span>
+                                <span style="color:#94a3b8;font-size:0.9rem;"><i class="fas fa-envelope" style="color:#60a5fa;"></i> hello@aisolutions.com</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card-dark">
+            <h3 class="text-center mb-3"><i class="fas fa-shield-alt" style="color:#3b82f6;"></i> 2FA Verification</h3>
+            
+            <!-- QR Code -->
+            {% if qr_img %}
+            <div class="text-center mb-3">
+                <p class="text-secondary">Scan this QR code with <strong>Google Authenticator</strong>:</p>
+                <img src="data:image/png;base64,{{ qr_img }}" alt="2FA QR Code" style="max-width:250px;border-radius:12px;border:2px solid #e2e8f0;">
+                <p class="text-secondary mt-2"><small>Or enter the secret key manually if QR doesn't work.</small></p>
+            </div>
+            {% endif %}
+            
+            <p class="text-center text-secondary">Enter the 6-digit code from your authenticator app.</p>
+            
+            <form method="POST">
+                <div class="mb-3">
+                    <input type="text" name="code" class="form-control text-center" placeholder="000000" maxlength="6" 
+                           style="font-size:2rem;letter-spacing:8px;font-weight:700;" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Verify</button>
+            </form>
+            
+            <p class="text-center text-secondary mt-3"><small>Code changes every 30 seconds.</small></p>
+        </div>
+    </div>
+</div>
+{% endblock %}
